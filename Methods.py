@@ -1,6 +1,66 @@
 from string import ascii_letters, digits
 from random import shuffle
 
+
+
+        
+def get_encrypted_txt(lst):
+    length = len(lst) - 1
+    index = 1
+    for i in lst:
+        if i == '{dict}':
+            return lst[1: index -1]
+        index = index +1
+
+
+def return_dict(lst):
+    length = len(lst) - 1
+    index = 1
+    for i in lst:
+        if i == '{dict}':
+            return lst[index: length]
+        index = index +1
+            
+def create_dict(lst):
+    
+    lst = return_dict(lst)
+    
+    
+    length = len(lst)
+    dict_ = {}
+    i= 0
+    while i <length:
+        if (i == 0 ):
+            
+            lst[i] = lst[i].replace('{','')
+            lst[i] = lst[i].replace("'",'')
+            lst[i] = lst[i].replace(':','')
+            
+        if(i%2 ==0):
+            lst[i] = lst[i].replace("'",'')
+            lst[i] = lst[i].replace(":",'')
+            
+        if( (i+1) == (length - 1)):
+            lst[i+1] = lst[i+1].replace('}','')
+            lst[i+1] = lst[i+1].replace("'",'')
+        
+        lst[i+1] = lst[i+1].replace("'",'')
+        lst[i+1] = lst[i+1].replace(',','')
+        
+      
+        dict_[lst[i]] = lst[i+1]
+        
+        i = i +2
+    return dict_
+
+
+def create_string(lst):
+    str_val = ''
+    for  i in lst:
+        str_val = str_val + ' ' + i
+    return str_val
+
+
 monoalpha_cipher = {
                     'a': 'm',
                     'b': 'n',

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>COMP6310 Group Project</title>
+<link rel="stylesheet" href="styles.css">
+<script type="text/javascript" src="jquery-3.6.0.min.js"></script> 
+<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body>
+
+<!------ Group 1 Members --------
+    Akeem Murray
+    Maray Mckoy 
+    Denecian Dennis 
+    Shantol Roye 
+------------------------------->
+
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <h1>COMP6310 Group Project</h1>
+
+        <div id="chat-box">
+            <h2>Chat</h2>
+            <h3>Message</h3>
+
+            <form id="chat-form">
+                <!-- <textarea id="message-log" rows="10" disabled></textarea> -->
+                <input type="text" id="message"  placeholder="Type message...">
+
+                <!-- <input type="text" id="message"> -->
+
+                <input id="send-btn" type="submit" onclick="sendMessage(event)" value="Send">
+                <!-- <input id="send-btn" type="submit" value="Send"> -->
+
+
+            </form>
+        
+            <button id="close-btn" onclick="closeChat()">Close</button>
+        </div>
+
+        <button id="chat-btn" onclick="openChat()">Chat</button>
+    </div>
+    <div class="col"></div>
+</div>
+
+</body>
+</html>
